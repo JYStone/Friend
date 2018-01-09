@@ -42,5 +42,7 @@ typedef NS_ENUM(NSInteger,GradientDirectionType) {
 
 /** UIView转化为UIImage */
 + (UIImage *)imageFromView:(UIView *)view;
+/** 将两个图片生成一张图片 */
++ (UIImage*)mergeImage:(UIImage*)firstImage withImage:(UIImage*)secondImage;
 
 @end

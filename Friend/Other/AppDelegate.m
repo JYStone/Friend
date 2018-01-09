@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
-#import "CustomTabBarController.h"
+#import "PasswordViewController.h"
+#import "CustomNavigationController.h"
+//#import "UIMarginViewController/UIMarginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,12 +22,11 @@
     // set RootViewController
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
-    CustomTabBarController *tabVC = [[CustomTabBarController alloc] init];
-    self.window.rootViewController = tabVC;
+    CustomNavigationController *customVC = [[CustomNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
+    self.window.rootViewController = customVC;
     [self.window makeKeyAndVisible];
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

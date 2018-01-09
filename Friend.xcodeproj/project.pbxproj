@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2A4BCC19511C8A4527A8ACFF /* Pods_Friend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABEB2C20A88B9A243082314 /* Pods_Friend.framework */; };
+		FE0C8C3C20038BB100178F0F /* UIImage+Irregular.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C8C3B20038BB100178F0F /* UIImage+Irregular.m */; };
+		FE0C8C4220046EC200178F0F /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C8C4120046EC200178F0F /* GradientButton.m */; };
+		FE0C8C442004949D00178F0F /* HomeButtonList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE0C8C432004949D00178F0F /* HomeButtonList.plist */; };
+		FE0C8C47200495D500178F0F /* HomeButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C8C46200495D500178F0F /* HomeButtonModel.m */; };
 		FE5C209520031499008EC68A /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C209120031499008EC68A /* CustomTabBarController.m */; };
 		FE5C209620031499008EC68A /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C209420031499008EC68A /* CustomNavigationController.m */; };
 		FE5C2099200314B4008EC68A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C2098200314B4008EC68A /* HomeViewController.m */; };
@@ -23,13 +27,13 @@
 		FE5C20C82003245C008EC68A /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C20C22003245C008EC68A /* MBProgressHUD+Add.m */; };
 		FE5C20C92003245C008EC68A /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE5C20C52003245C008EC68A /* MBProgressHUD.bundle */; };
 		FE76503820030ED40014B33B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76503720030ED40014B33B /* AppDelegate.m */; };
-		FE76504020030ED40014B33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE76503F20030ED40014B33B /* Assets.xcassets */; };
 		FE76504320030ED40014B33B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE76504120030ED40014B33B /* LaunchScreen.storyboard */; };
 		FE76504620030ED40014B33B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76504520030ED40014B33B /* main.m */; };
 		FE76505020030ED40014B33B /* FriendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76504F20030ED40014B33B /* FriendTests.m */; };
 		FE76505B20030ED40014B33B /* FriendUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE76505A20030ED40014B33B /* FriendUITests.m */; };
 		FEF8F2722003595400408AB0 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF8F2712003595400408AB0 /* UIBarButtonItem+Extension.m */; };
-		FEF8F27520035B2A00408AB0 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF8F27420035B2A00408AB0 /* MineViewController.m */; };
+		FEF8F27520035B2A00408AB0 /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF8F27420035B2A00408AB0 /* PasswordViewController.m */; };
+		FEF8F27720036BCD00408AB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF8F27620036BCD00408AB0 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,13 @@
 		1ABEB2C20A88B9A243082314 /* Pods_Friend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Friend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55356A175621E4F64504ABB5 /* Pods-Friend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friend.release.xcconfig"; path = "Pods/Target Support Files/Pods-Friend/Pods-Friend.release.xcconfig"; sourceTree = "<group>"; };
 		B782D1BCE480136A627D6BCD /* Pods-Friend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friend.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Friend/Pods-Friend.debug.xcconfig"; sourceTree = "<group>"; };
+		FE0C8C3A20038BB100178F0F /* UIImage+Irregular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Irregular.h"; sourceTree = "<group>"; };
+		FE0C8C3B20038BB100178F0F /* UIImage+Irregular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Irregular.m"; sourceTree = "<group>"; };
+		FE0C8C4020046EC200178F0F /* GradientButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientButton.h; sourceTree = "<group>"; };
+		FE0C8C4120046EC200178F0F /* GradientButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
+		FE0C8C432004949D00178F0F /* HomeButtonList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HomeButtonList.plist; sourceTree = "<group>"; };
+		FE0C8C45200495D500178F0F /* HomeButtonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeButtonModel.h; sourceTree = "<group>"; };
+		FE0C8C46200495D500178F0F /* HomeButtonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeButtonModel.m; sourceTree = "<group>"; };
 		FE5C209020031499008EC68A /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
 		FE5C209120031499008EC68A /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
 		FE5C209320031499008EC68A /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
@@ -87,7 +98,6 @@
 		FE76503320030ED40014B33B /* Friend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE76503620030ED40014B33B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FE76503720030ED40014B33B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FE76503F20030ED40014B33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE76504220030ED40014B33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE76504420030ED40014B33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE76504520030ED40014B33B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,8 +109,9 @@
 		FE76505C20030ED40014B33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEF8F2702003595300408AB0 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		FEF8F2712003595400408AB0 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
-		FEF8F27320035B2A00408AB0 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
-		FEF8F27420035B2A00408AB0 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		FEF8F27320035B2A00408AB0 /* PasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		FEF8F27420035B2A00408AB0 /* PasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		FEF8F27620036BCD00408AB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +157,36 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE0C8C3D20046E9A00178F0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C8C45200495D500178F0F /* HomeButtonModel.h */,
+				FE0C8C46200495D500178F0F /* HomeButtonModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE0C8C3E20046E9A00178F0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C8C4020046EC200178F0F /* GradientButton.h */,
+				FE0C8C4120046EC200178F0F /* GradientButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE0C8C3F20046E9B00178F0F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE5C2097200314B4008EC68A /* HomeViewController.h */,
+				FE5C2098200314B4008EC68A /* HomeViewController.m */,
+				FE0C8C432004949D00178F0F /* HomeButtonList.plist */,
+				FEF8F27320035B2A00408AB0 /* PasswordViewController.h */,
+				FEF8F27420035B2A00408AB0 /* PasswordViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		FE5C2080200312AB008EC68A /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +202,8 @@
 				FE5C20A320031B87008EC68A /* UIColor+Hex.m */,
 				FE5C20A720031B87008EC68A /* UIView+Frame.h */,
 				FE5C209C20031B86008EC68A /* UIView+Frame.m */,
+				FE0C8C3A20038BB100178F0F /* UIImage+Irregular.h */,
+				FE0C8C3B20038BB100178F0F /* UIImage+Irregular.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -208,8 +251,8 @@
 			children = (
 				FE76503620030ED40014B33B /* AppDelegate.h */,
 				FE76503720030ED40014B33B /* AppDelegate.m */,
-				FE76503F20030ED40014B33B /* Assets.xcassets */,
 				FE76504120030ED40014B33B /* LaunchScreen.storyboard */,
+				FEF8F27620036BCD00408AB0 /* Assets.xcassets */,
 				FE76504520030ED40014B33B /* main.m */,
 			);
 			name = Other;
@@ -228,10 +271,9 @@
 		FE5C208E20031439008EC68A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FE5C2097200314B4008EC68A /* HomeViewController.h */,
-				FE5C2098200314B4008EC68A /* HomeViewController.m */,
-				FEF8F27320035B2A00408AB0 /* MineViewController.h */,
-				FEF8F27420035B2A00408AB0 /* MineViewController.m */,
+				FE0C8C3F20046E9B00178F0F /* Controller */,
+				FE0C8C3D20046E9A00178F0F /* Model */,
+				FE0C8C3E20046E9A00178F0F /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -449,8 +491,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE76504320030ED40014B33B /* LaunchScreen.storyboard in Resources */,
-				FE76504020030ED40014B33B /* Assets.xcassets in Resources */,
+				FEF8F27720036BCD00408AB0 /* Assets.xcassets in Resources */,
 				FE5C20C92003245C008EC68A /* MBProgressHUD.bundle in Resources */,
+				FE0C8C442004949D00178F0F /* HomeButtonList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,16 +581,19 @@
 				FE76504620030ED40014B33B /* main.m in Sources */,
 				FE5C20AC20031B87008EC68A /* UIColor+Hex.m in Sources */,
 				FE5C20B720031BA9008EC68A /* BaseService.m in Sources */,
+				FE0C8C3C20038BB100178F0F /* UIImage+Irregular.m in Sources */,
 				FE5C20A820031B87008EC68A /* NSString+Extension.m in Sources */,
 				FE5C20B620031BA9008EC68A /* AFHTTPClient.m in Sources */,
 				FE76503820030ED40014B33B /* AppDelegate.m in Sources */,
 				FE5C20A920031B87008EC68A /* UIView+Frame.m in Sources */,
 				FE5C20C82003245C008EC68A /* MBProgressHUD+Add.m in Sources */,
 				FE5C20C72003245C008EC68A /* MBProgressHUD.m in Sources */,
+				FE0C8C47200495D500178F0F /* HomeButtonModel.m in Sources */,
 				FE5C209620031499008EC68A /* CustomNavigationController.m in Sources */,
 				FE5C2099200314B4008EC68A /* HomeViewController.m in Sources */,
 				FE5C209520031499008EC68A /* CustomTabBarController.m in Sources */,
-				FEF8F27520035B2A00408AB0 /* MineViewController.m in Sources */,
+				FE0C8C4220046EC200178F0F /* GradientButton.m in Sources */,
+				FEF8F27520035B2A00408AB0 /* PasswordViewController.m in Sources */,
 				FEF8F2722003595400408AB0 /* UIBarButtonItem+Extension.m in Sources */,
 				FE5C20C62003245C008EC68A /* Reachability.m in Sources */,
 				FE5C20AD20031B87008EC68A /* NSArray+Extension.m in Sources */,
@@ -714,6 +760,7 @@
 					"$(PROJECT_DIR)/Friend/Vendors/UMSocial/UMSocialUI",
 					"$(PROJECT_DIR)/Friend/Vendors/UMSocial/UMSocialSDK",
 					"$(PROJECT_DIR)/Friend/Vendors/UMSocial/SocialLibraries/QQ/QQSDK",
+					"$(PROJECT_DIR)/Friend/Vendors",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Friend/Macro/M.pch;
@@ -749,6 +796,7 @@
 					"$(PROJECT_DIR)/Friend/Vendors/UMSocial/UMSocialUI",
 					"$(PROJECT_DIR)/Friend/Vendors/UMSocial/UMSocialSDK",
 					"$(PROJECT_DIR)/Friend/Vendors/UMSocial/SocialLibraries/QQ/QQSDK",
+					"$(PROJECT_DIR)/Friend/Vendors",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Friend/Macro/M.pch;

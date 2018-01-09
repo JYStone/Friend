@@ -16,7 +16,7 @@
 /** 宽度比例 */
 + (CGFloat)widthScale
 {
-    return DEVICE_SCREEN_HEIGHT / 750.0;
+    return DEVICE_SCREEN_WIDTH / 750.0;
 }
 /** 高度比例 */
 + (CGFloat)heightScale

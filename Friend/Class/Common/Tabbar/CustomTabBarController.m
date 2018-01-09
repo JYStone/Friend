@@ -9,7 +9,7 @@
 #import "CustomTabBarController.h"
 #import "CustomNavigationController.h"
 #import "HomeViewController.h"
-#import "MineViewController.h"
+#import "PasswordViewController.h"
 @interface CustomTabBarController ()
 
 @end
@@ -24,7 +24,7 @@
     HomeViewController *HomeVC = [[HomeViewController alloc] init];
     [self addOneChlildVc:HomeVC title:@"首页" imageName:@"tabbar_home" selectedImageName:@"tabbar_home_selected"];
     
-    MineViewController *MineVC = [[MineViewController alloc] init];
+    PasswordViewController *MineVC = [[PasswordViewController alloc] init];
     [self addOneChlildVc:MineVC title:@"个人中心" imageName:@"tabbar_message_center" selectedImageName:@"tabbar_message_center_selected"];
 }
 

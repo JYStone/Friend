@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>纪念日</string>
+		<key>desc</key>
+		<string>1条</string>
+		<key>icon</key>
+		<string></string>
+		<key>leftColor</key>
+		<string>FC80C7</string>
+		<key>rightColor</key>
+		<string>F5728D</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>时光记录</string>
+		<key>desc</key>
+		<string>1条</string>
+		<key>icon</key>
+		<string></string>
+		<key>leftColor</key>
+		<string>FA7DBA</string>
+		<key>rightColor</key>
+		<string>F4718E</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>爱情树</string>
+		<key>desc</key>
+		<string>1天</string>
+		<key>icon</key>
+		<string></string>
+		<key>leftColor</key>
+		<string>FEAC6F</string>
+		<key>rightColor</key>
+		<string>FD8871</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>恋爱打卡</string>
+		<key>desc</key>
+		<string>1次</string>
+		<key>icon</key>
+		<string></string>
+		<key>leftColor</key>
+		<string>F8C45A</string>
+		<key>rightColor</key>
+		<string>F5AD51</string>
+	</dict>
+</array>
+</plist>

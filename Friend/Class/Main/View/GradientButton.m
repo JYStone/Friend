@@ -7,7 +7,7 @@
 //
 
 #import "GradientButton.h"
-
+#import "UIImageView+WebCache.h"
 @implementation GradientButton
 
 - (id)initWithFrame:(CGRect)frame Model:(HomeButtonModel *)model{
@@ -51,7 +51,7 @@
     
     UIImageView *icon = [[UIImageView alloc] init];
     icon.scaleFrame6 = CGRectMake(300-64-30, 30, 64, 64);
-    icon.backgroundColor = COLOR_FFFFFF;
+    [icon sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"background_skin_download.png"]];
     [self addSubview:icon];
     
     

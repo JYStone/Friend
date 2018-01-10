@@ -8,8 +8,11 @@
 
 #import "HomeViewController.h"
 #import "PasswordViewController.h"
+#import "SpecialDayViewController.h"
+#import "UIImageView+WebCache.h"
 #import "HomeButtonModel.h"
 #import "GradientButton.h"
+#import "ActivityIndicator.h"
 @interface HomeViewController ()
 @property (nonatomic, strong) CAShapeLayer *maskLayer;
 @property (nonatomic, strong) CALayer *contentLayer;
@@ -24,7 +27,8 @@
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage resizedImage:@"nav_bar_bg.png"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,12 +39,17 @@
     UIImageView *bgImageView = [[UIImageView alloc] init];
     bgImageView.scaleFrame6 = CGRectMake(0, 0, 750, 800);
     bgImageView.backgroundColor = [UIColor lightGrayColor];
-    bgImageView.image = [UIImage imageNamed:@"55555.jpg"];
+    bgImageView.image = [UIImage imageNamed:@"testImage.jpg"];
     bgImageView.contentMode = UIViewContentModeScaleAspectFit;
+    bgImageView.userInteractionEnabled = YES;
     [self.view addSubview:bgImageView];
     
+    //创建手势对象
+    UITapGestureRecognizer *tap =[[UITapGestureRecognizer alloc]initWithTarget:self     action:@selector(tapAction:)];
+    [bgImageView addGestureRecognizer:tap];
+    
     // 渐变区域
-    UIView *gradientView = [[UIView alloc] init];
+    UIImageView *gradientView = [[UIImageView alloc] init];
     gradientView.scaleFrame6 = CGRectMake(0, 700, 750, 100);
     [self.view addSubview:gradientView];
     
@@ -49,25 +58,31 @@
     headerLayer.colors = [NSArray arrayWithObjects:(id)[UIColor clearColor].CGColor, [UIColor lightGrayColor].CGColor, nil];;
     headerLayer.locations = [NSArray arrayWithObjects:[NSNumber numberWithFloat:0.0], [NSNumber numberWithFloat:1.0], nil];
     headerLayer.frame = gradientView.bounds;
-    [gradientView.layer insertSublayer:headerLayer atIndex:0];
+//    [gradientView.layer addSublayer:headerLayer];
+//    [gradientView.layer insertSublayer:headerLayer atIndex:0];
     
-    // 我们在一起X天
-//    UILabel *
-    
-    _maskLayer = [CAShapeLayer layer];
-    _maskLayer.fillColor = [UIColor blackColor].CGColor;
-    _maskLayer.strokeColor = [UIColor clearColor].CGColor;
-    _maskLayer.frame = bgImageView.bounds;
-    _maskLayer.contentsCenter = CGRectMake(0.5, 0.5, 0.1, 0.1);
-    _maskLayer.contentsScale = [UIScreen mainScreen].scale;                 //非常关键设置自动拉伸的效果且不变形
-    _maskLayer.contents = (id)[UIImage imageNamed:@"gray_bubble_right@2x.png"].CGImage;
-    
-    _contentLayer = [CALayer layer];
-    _contentLayer.mask = _maskLayer;
-    _contentLayer.frame = bgImageView.bounds;
-    [bgImageView.layer addSublayer:_contentLayer];
+    //创建BezierPath 绘制_bgVC层
+    CGSize size = bgImageView.bounds.size;
+    CGFloat startHeight = 0;
+    CGFloat endHeight = size.height * 0.91;
+    UIBezierPath *aPath = [UIBezierPath bezierPath];
+    [aPath moveToPoint:CGPointMake(size.width/3, endHeight)];
+    [aPath addLineToPoint:CGPointMake(0, endHeight)];
+    [aPath addLineToPoint:CGPointMake(0, startHeight)];
+    [aPath addLineToPoint:CGPointMake(size.width, startHeight)];
+    [aPath addLineToPoint:CGPointMake(size.width, size.height)];
+    [aPath addLineToPoint:CGPointMake(size.width*2/3, size.height)];
+
+    [aPath addCurveToPoint:CGPointMake(size.width/3, endHeight) controlPoint1:CGPointMake(size.width*2/3-70, size.height) controlPoint2:CGPointMake(size.width/3+70, endHeight)];
+
+    CAShapeLayer *layer = [CAShapeLayer layer];
+//    layer.strokeColor = [UIColor purpleColor].CGColor;
+//    layer.fillColor = [UIColor brownColor].CGColor;
+    layer.path = aPath.CGPath;
+    [bgImageView.layer setMask:layer];
     
     NSArray *list = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"HomeButtonList" ofType:@"plist"]];
+    NSArray *headImageList = [NSArray arrayWithObjects:@"head_default_male",@"head_default_female", nil];
     NSArray *colorArray = [HomeButtonModel mj_objectArrayWithKeyValuesArray:list];
     for (int i = 0; i<2; i++) {
         for (int j = 0; j<2; j++) {
@@ -78,12 +93,45 @@
             [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:button];
         }
+        //
+        UIImageView *headImage = [[UIImageView alloc] init];
+        headImage.scaleFrame6 = CGRectMake(50+120*i, 678, 100, 100);
+        [headImage sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:headImageList[i]]];
+        headImage.userInteractionEnabled = YES;
+        headImage.tag = 200+i;
+        headImage.layer.masksToBounds = YES;
+        headImage.layer.cornerRadius = 100/2*HEIGHT_SCALE_6;
+        headImage.layer.borderColor = COLOR_FFFFFF.CGColor;
+        headImage.layer.borderWidth = 2;
+        [self.view addSubview:headImage];
+        
+        //创建手势对象
+        UITapGestureRecognizer *tap =[[UITapGestureRecognizer alloc]initWithTarget:self     action:@selector(tapAction2:)];
+        [headImage addGestureRecognizer:tap];
     }
+    
 }
+
+- (void)tapAction:(UITapGestureRecognizer *)tap
+{
+    NSLog(@"tapAction");
+//    [ActivityIndicator showAlertMessage:@"啦啦" boyIcon:@"" girlIcon:@""];
+}
+
+- (void)tapAction2:(UITapGestureRecognizer *)tap
+{
+    NSLog(@"tapAction2");
+    //    [ActivityIndicator showAlertMessage:@"啦啦" boyIcon:@"" girlIcon:@""];
+}
+
 
 - (void)buttonClick:(UIButton *)sender
 {
     NSLog(@"%ld",sender.tag);
+    if (sender.tag == 100) {
+        SpecialDayViewController *specialVC = [[SpecialDayViewController alloc] init];
+        [self.navigationController pushViewController:specialVC animated:YES];
+    }
 }
 
 - (void)leftItemClick {

@@ -12,6 +12,16 @@
 		FE0C8C4220046EC200178F0F /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C8C4120046EC200178F0F /* GradientButton.m */; };
 		FE0C8C442004949D00178F0F /* HomeButtonList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE0C8C432004949D00178F0F /* HomeButtonList.plist */; };
 		FE0C8C47200495D500178F0F /* HomeButtonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C8C46200495D500178F0F /* HomeButtonModel.m */; };
+		FE0C8C4D2004AA4900178F0F /* SpecialDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C8C4C2004AA4900178F0F /* SpecialDayViewController.m */; };
+		FE0C8C512004AB7C00178F0F /* RefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C8C502004AB7C00178F0F /* RefreshHeader.m */; };
+		FE0C8C542004B57100178F0F /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0C8C532004B57100178F0F /* ActivityIndicator.m */; };
+		FE550CD92005E33400684D89 /* SpecialDayHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE550CD82005E33400684D89 /* SpecialDayHeadView.m */; };
+		FE550CDB2005E33F00684D89 /* SpecialDayHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE550CDA2005E33F00684D89 /* SpecialDayHeadView.xib */; };
+		FE550CDF2005F05B00684D89 /* SpecialDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE550CDD2005F05B00684D89 /* SpecialDayCell.m */; };
+		FE550CE02005F05B00684D89 /* SpecialDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE550CDE2005F05B00684D89 /* SpecialDayCell.xib */; };
+		FE550CE320060D5B00684D89 /* SpecialDayList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE550CE220060D5B00684D89 /* SpecialDayList.plist */; };
+		FE550CE620060F2600684D89 /* SpecialDayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE550CE520060F2600684D89 /* SpecialDayModel.m */; };
+		FE550CE92006160200684D89 /* AddDateController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE550CE82006160200684D89 /* AddDateController.m */; };
 		FE5C209520031499008EC68A /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C209120031499008EC68A /* CustomTabBarController.m */; };
 		FE5C209620031499008EC68A /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C209420031499008EC68A /* CustomNavigationController.m */; };
 		FE5C2099200314B4008EC68A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5C2098200314B4008EC68A /* HomeViewController.m */; };
@@ -64,6 +74,24 @@
 		FE0C8C432004949D00178F0F /* HomeButtonList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HomeButtonList.plist; sourceTree = "<group>"; };
 		FE0C8C45200495D500178F0F /* HomeButtonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeButtonModel.h; sourceTree = "<group>"; };
 		FE0C8C46200495D500178F0F /* HomeButtonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeButtonModel.m; sourceTree = "<group>"; };
+		FE0C8C4B2004AA4900178F0F /* SpecialDayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialDayViewController.h; sourceTree = "<group>"; };
+		FE0C8C4C2004AA4900178F0F /* SpecialDayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialDayViewController.m; sourceTree = "<group>"; };
+		FE0C8C4F2004AB7C00178F0F /* RefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefreshHeader.h; sourceTree = "<group>"; };
+		FE0C8C502004AB7C00178F0F /* RefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefreshHeader.m; sourceTree = "<group>"; };
+		FE0C8C522004B57100178F0F /* ActivityIndicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityIndicator.h; sourceTree = "<group>"; };
+		FE0C8C532004B57100178F0F /* ActivityIndicator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityIndicator.m; sourceTree = "<group>"; };
+		FE550CD72005E33400684D89 /* SpecialDayHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialDayHeadView.h; sourceTree = "<group>"; };
+		FE550CD82005E33400684D89 /* SpecialDayHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialDayHeadView.m; sourceTree = "<group>"; };
+		FE550CDA2005E33F00684D89 /* SpecialDayHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialDayHeadView.xib; sourceTree = "<group>"; };
+		FE550CDC2005F05B00684D89 /* SpecialDayCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialDayCell.h; sourceTree = "<group>"; };
+		FE550CDD2005F05B00684D89 /* SpecialDayCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialDayCell.m; sourceTree = "<group>"; };
+		FE550CDE2005F05B00684D89 /* SpecialDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialDayCell.xib; sourceTree = "<group>"; };
+		FE550CE12005F85500684D89 /* ConstantMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantMacro.h; sourceTree = "<group>"; };
+		FE550CE220060D5B00684D89 /* SpecialDayList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SpecialDayList.plist; sourceTree = "<group>"; };
+		FE550CE420060F2600684D89 /* SpecialDayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialDayModel.h; sourceTree = "<group>"; };
+		FE550CE520060F2600684D89 /* SpecialDayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialDayModel.m; sourceTree = "<group>"; };
+		FE550CE72006160200684D89 /* AddDateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddDateController.h; sourceTree = "<group>"; };
+		FE550CE82006160200684D89 /* AddDateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddDateController.m; sourceTree = "<group>"; };
 		FE5C209020031499008EC68A /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
 		FE5C209120031499008EC68A /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
 		FE5C209320031499008EC68A /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationController.h; sourceTree = "<group>"; };
@@ -161,7 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				FE0C8C45200495D500178F0F /* HomeButtonModel.h */,
-				FE0C8C46200495D500178F0F /* HomeButtonModel.m */,
+				FE550CE420060F2600684D89 /* SpecialDayModel.h */,
+				FE550CE520060F2600684D89 /* SpecialDayModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +200,15 @@
 			children = (
 				FE0C8C4020046EC200178F0F /* GradientButton.h */,
 				FE0C8C4120046EC200178F0F /* GradientButton.m */,
+				FE0C8C522004B57100178F0F /* ActivityIndicator.h */,
+				FE0C8C46200495D500178F0F /* HomeButtonModel.m */,
+				FE0C8C532004B57100178F0F /* ActivityIndicator.m */,
+				FE550CD72005E33400684D89 /* SpecialDayHeadView.h */,
+				FE550CD82005E33400684D89 /* SpecialDayHeadView.m */,
+				FE550CDA2005E33F00684D89 /* SpecialDayHeadView.xib */,
+				FE550CDC2005F05B00684D89 /* SpecialDayCell.h */,
+				FE550CDD2005F05B00684D89 /* SpecialDayCell.m */,
+				FE550CDE2005F05B00684D89 /* SpecialDayCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,14 +216,53 @@
 		FE0C8C3F20046E9B00178F0F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FE5C2097200314B4008EC68A /* HomeViewController.h */,
-				FE5C2098200314B4008EC68A /* HomeViewController.m */,
-				FE0C8C432004949D00178F0F /* HomeButtonList.plist */,
-				FEF8F27320035B2A00408AB0 /* PasswordViewController.h */,
-				FEF8F27420035B2A00408AB0 /* PasswordViewController.m */,
+				FE0C8C482004AA1D00178F0F /* 首页 */,
+				FE0C8C492004AA1D00178F0F /* 纪念日 */,
+				FE0C8C4A2004AA1D00178F0F /* 密码 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
+		};
+		FE0C8C482004AA1D00178F0F /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				FE5C2097200314B4008EC68A /* HomeViewController.h */,
+				FE5C2098200314B4008EC68A /* HomeViewController.m */,
+				FE0C8C432004949D00178F0F /* HomeButtonList.plist */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		FE0C8C492004AA1D00178F0F /* 纪念日 */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C8C4B2004AA4900178F0F /* SpecialDayViewController.h */,
+				FE0C8C4C2004AA4900178F0F /* SpecialDayViewController.m */,
+				FE550CE220060D5B00684D89 /* SpecialDayList.plist */,
+				FE550CE72006160200684D89 /* AddDateController.h */,
+				FE550CE82006160200684D89 /* AddDateController.m */,
+			);
+			path = "纪念日";
+			sourceTree = "<group>";
+		};
+		FE0C8C4A2004AA1D00178F0F /* 密码 */ = {
+			isa = PBXGroup;
+			children = (
+				FEF8F27320035B2A00408AB0 /* PasswordViewController.h */,
+				FEF8F27420035B2A00408AB0 /* PasswordViewController.m */,
+			);
+			path = "密码";
+			sourceTree = "<group>";
+		};
+		FE0C8C4E2004AB6700178F0F /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				FE0C8C4F2004AB7C00178F0F /* RefreshHeader.h */,
+				FE0C8C502004AB7C00178F0F /* RefreshHeader.m */,
+			);
+			name = Animation;
+			path = Friend/Class/Animation;
+			sourceTree = SOURCE_ROOT;
 		};
 		FE5C2080200312AB008EC68A /* Category */ = {
 			isa = PBXGroup;
@@ -226,6 +303,7 @@
 				FE5C20BA20031C1A008EC68A /* APIMacro.h */,
 				FE5C20B820031C1A008EC68A /* ColorMacro.h */,
 				FE5C20B920031C1A008EC68A /* DeviceMacro.h */,
+				FE550CE12005F85500684D89 /* ConstantMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -262,6 +340,7 @@
 		FE5C208D20031439008EC68A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FE0C8C4E2004AB6700178F0F /* Animation */,
 				FE5C209220031499008EC68A /* Navigation */,
 				FE5C208F20031499008EC68A /* Tabbar */,
 			);
@@ -493,7 +572,10 @@
 				FE76504320030ED40014B33B /* LaunchScreen.storyboard in Resources */,
 				FEF8F27720036BCD00408AB0 /* Assets.xcassets in Resources */,
 				FE5C20C92003245C008EC68A /* MBProgressHUD.bundle in Resources */,
+				FE550CDB2005E33F00684D89 /* SpecialDayHeadView.xib in Resources */,
+				FE550CE02005F05B00684D89 /* SpecialDayCell.xib in Resources */,
 				FE0C8C442004949D00178F0F /* HomeButtonList.plist in Resources */,
+				FE550CE320060D5B00684D89 /* SpecialDayList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,10 +660,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE550CDF2005F05B00684D89 /* SpecialDayCell.m in Sources */,
 				FE76504620030ED40014B33B /* main.m in Sources */,
 				FE5C20AC20031B87008EC68A /* UIColor+Hex.m in Sources */,
 				FE5C20B720031BA9008EC68A /* BaseService.m in Sources */,
+				FE550CD92005E33400684D89 /* SpecialDayHeadView.m in Sources */,
 				FE0C8C3C20038BB100178F0F /* UIImage+Irregular.m in Sources */,
+				FE0C8C512004AB7C00178F0F /* RefreshHeader.m in Sources */,
+				FE0C8C542004B57100178F0F /* ActivityIndicator.m in Sources */,
+				FE550CE620060F2600684D89 /* SpecialDayModel.m in Sources */,
 				FE5C20A820031B87008EC68A /* NSString+Extension.m in Sources */,
 				FE5C20B620031BA9008EC68A /* AFHTTPClient.m in Sources */,
 				FE76503820030ED40014B33B /* AppDelegate.m in Sources */,
@@ -590,7 +677,9 @@
 				FE5C20C72003245C008EC68A /* MBProgressHUD.m in Sources */,
 				FE0C8C47200495D500178F0F /* HomeButtonModel.m in Sources */,
 				FE5C209620031499008EC68A /* CustomNavigationController.m in Sources */,
+				FE550CE92006160200684D89 /* AddDateController.m in Sources */,
 				FE5C2099200314B4008EC68A /* HomeViewController.m in Sources */,
+				FE0C8C4D2004AA4900178F0F /* SpecialDayViewController.m in Sources */,
 				FE5C209520031499008EC68A /* CustomTabBarController.m in Sources */,
 				FE0C8C4220046EC200178F0F /* GradientButton.m in Sources */,
 				FEF8F27520035B2A00408AB0 /* PasswordViewController.m in Sources */,

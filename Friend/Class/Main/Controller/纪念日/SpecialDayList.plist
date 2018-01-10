@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>weathericon1.png</string>
+		<key>text</key>
+		<string>1</string>
+		<key>type</key>
+		<string>local</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>weathericon2.png</string>
+		<key>text</key>
+		<string>2</string>
+		<key>type</key>
+		<string>local</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>weathericon3.png</string>
+		<key>text</key>
+		<string>3</string>
+		<key>type</key>
+		<string>local</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>weathericon4.png</string>
+		<key>text</key>
+		<string>4</string>
+		<key>type</key>
+		<string>local</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>weathericon5.png</string>
+		<key>text</key>
+		<string>5</string>
+		<key>type</key>
+		<string>local</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>weathericon6.png</string>
+		<key>text</key>
+		<string>6</string>
+		<key>type</key>
+		<string>local</string>
+	</dict>
+</array>
+</plist>

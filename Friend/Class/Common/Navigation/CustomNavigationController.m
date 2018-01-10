@@ -21,15 +21,15 @@
     // 修改导航栏背景颜色
     self.navigationBar.barTintColor = [UIColor whiteColor];
     // 添加背景底部阴影
-    self.navigationBar.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-    self.navigationBar.layer.shadowOffset = CGSizeMake(0, 4);
-    self.navigationBar.layer.shadowOpacity = 1;
+//    self.navigationBar.layer.shadowColor = COLOR(@"f17cbe").CGColor;
+//    self.navigationBar.layer.shadowOffset = CGSizeMake(0, 4);
+//    self.navigationBar.layer.shadowOpacity = 1;
     // 去掉底部线条添加阴影
     self.navigationBar.shadowImage = [UIImage new];
     // 背景样式
-    [self.navigationBar setBackgroundImage:[UIImage imageViewColor:[UIColor whiteColor] Size:self.navigationBar.size] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setBackgroundImage:[UIImage resizedImage:@"nav_bar_bg.png"] forBarMetrics:UIBarMetricsDefault];
     // 文字样式
-    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:COLOR_282E39,NSForegroundColorAttributeName,QHQFontSizeRegular(36),NSFontAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:COLOR_FFFFFF,NSForegroundColorAttributeName,QHQFontSizeRegular(50),NSFontAttributeName, nil];
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
@@ -38,7 +38,7 @@
     if (self.viewControllers.count > 0) {
         // 就隐藏下面的TabBar
         viewController.hidesBottomBarWhenPushed = YES;
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"icon_night_back" highImageName:@"icon_night_back" target:self action:@selector(leftItemClick)];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImageName:@"ln_common_back" highImageName:@"ln_common_back" target:self action:@selector(leftItemClick)];
     }
     [super pushViewController:viewController animated:animated];
 }

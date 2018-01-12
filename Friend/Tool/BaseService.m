@@ -281,4 +281,22 @@
     }
 }
 
+/** 开启相机权限 */
++ (void)openPrivacyCameraPermissions
+{
+    
+}
+
+/** 开启相册权限 */
++ (void)openPrivacyPhotoLibraryPermissions
+{
+    
+}
+
+/** 开启位置权限 */
++ (void)openPrivacyLocationPermissions
+{
+    
+}
+
 @end

@@ -69,4 +69,15 @@
 + (UIFont *_Nullable)fontWithMediumSize:(CGFloat)fontSize;
 + (UIFont *_Nullable)fontWithSemiboldSize:(CGFloat)fontSize;
 
+/** 开启相机权限 */
++ (void)openPrivacyCameraPermissions;
+
+/** 开启相册权限 */
++ (void)openPrivacyPhotoLibraryPermissions;
+
+/** 开启位置权限 */
++ (void)openPrivacyLocationPermissions;
+
+/** 是否开启相机相册权限 如果没有开启 需要提示开启*/
+
 @end

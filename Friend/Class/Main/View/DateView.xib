@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DateView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eji-A9-ua6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
+                    <date key="date" timeIntervalSinceReferenceDate="537344016.77128196">
+                        <!--2018-01-11 06:13:36 +0000-->
+                    </date>
+                    <date key="minimumDate" timeIntervalSinceReferenceDate="-347184000">
+                        <!--1989-12-31 16:00:00 +0000-->
+                    </date>
+                    <date key="maximumDate" timeIntervalSinceReferenceDate="1577807999">
+                        <!--2050-12-31 15:59:59 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="zh"/>
+                    <connections>
+                        <action selector="dateChange:" destination="iN0-l3-epB" eventType="valueChanged" id="CNs-iq-KL5"/>
+                    </connections>
+                </datePicker>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eji-A9-ua6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="EyA-MG-ssv"/>
+                <constraint firstItem="eji-A9-ua6" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="X7X-09-kpR"/>
+                <constraint firstItem="eji-A9-ua6" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="fvr-d8-2ya"/>
+                <constraint firstItem="eji-A9-ua6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vGT-sf-c6j"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="datePicker" destination="eji-A9-ua6" id="mOx-KP-JFm"/>
+            </connections>
+            <point key="canvasLocation" x="-17.5" y="-184.5"/>
+        </view>
+    </objects>
+</document>

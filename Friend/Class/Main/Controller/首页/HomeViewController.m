@@ -13,6 +13,8 @@
 #import "HomeButtonModel.h"
 #import "GradientButton.h"
 #import "ActivityIndicator.h"
+#import <AVKit/AVKit.h>
+
 @interface HomeViewController ()
 @property (nonatomic, strong) CAShapeLayer *maskLayer;
 @property (nonatomic, strong) CALayer *contentLayer;
@@ -109,9 +111,22 @@
         UITapGestureRecognizer *tap =[[UITapGestureRecognizer alloc]initWithTarget:self     action:@selector(tapAction2:)];
         [headImage addGestureRecognizer:tap];
     }
-    
+    [self ckeckVideoAuth];
 }
 
+- (void)ckeckVideoAuth
+{
+    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (granted) {
+                NSLog(@"成功");
+            } else {
+                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"请打开相机权限" message:@"设置-隐私-相机" delegate:self cancelButtonTitle:@"去设置" otherButtonTitles:@"取消", nil];
+                [alertView show];
+            }
+        });
+    }];
+}
 - (void)tapAction:(UITapGestureRecognizer *)tap
 {
     NSLog(@"tapAction");

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AddDateController : UITableViewController
-
+@property (nonatomic, copy) NSString *text;
 @end

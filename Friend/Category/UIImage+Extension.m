@@ -259,4 +259,36 @@
     return image;
 }
 
+/** 切割图片 */
++ (UIImage *)imageWithCornerRadius:(CGFloat)radius withImageView:(UIImageView *)imageView{
+    CGRect rect = (CGRect){0.f, 0.f, imageView.frame.size};
+    UIGraphicsBeginImageContextWithOptions(imageView.frame.size, NO, UIScreen.mainScreen.scale);
+    CGContextAddPath(UIGraphicsGetCurrentContext(),[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius].CGPath);
+    CGContextClip(UIGraphicsGetCurrentContext());
+    
+    [imageView.image drawInRect:rect];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+/**
+ *从图片中按指定的位置大小截取图片的一部分
+ * UIImage image 原始的图片
+ * CGRect rect 要截取的区域
+ */
++(UIImage *)imageFromImage:(UIImage *)image inRect:(CGRect)rect{
+    
+    //将UIImage转换成CGImageRef
+    CGImageRef sourceImageRef = [image CGImage];
+    
+    //按照给定的矩形区域进行剪裁
+    CGImageRef newImageRef = CGImageCreateWithImageInRect(sourceImageRef, rect);
+    
+    //将CGImageRef转换成UIImage
+    UIImage *newImage = [UIImage imageWithCGImage:newImageRef];
+    
+    //返回剪裁后的图片
+    return newImage;
+}
 @end

@@ -21,6 +21,8 @@
 #import "ColorMacro.h"
 #import "APIMacro.h"
 #import "BaseService.h"
+#import "PrivacyPermission.h"
+
 
 //正式发布时，设置log为非编译状态
 #define kSecretKeyForCSRF @"1122223444444"

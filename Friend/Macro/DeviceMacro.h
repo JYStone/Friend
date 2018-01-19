@@ -62,4 +62,10 @@
 // 通知
 #define AddBillSuccessNotification       @"AddBillSuccessNotification"
 
+// 弱引用
+#define weakify(var)   __weak typeof(var) weakSelf = var
+
+// 强引用
+#define strongify(var) __strong typeof(var) strongSelf = var
+
 #endif /* QHQDeviceMacro_h */

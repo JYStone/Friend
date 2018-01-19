@@ -43,6 +43,13 @@ typedef NS_ENUM(NSInteger,GradientDirectionType) {
 /** UIView转化为UIImage */
 + (UIImage *)imageFromView:(UIView *)view;
 /** 将两个图片生成一张图片 */
-+ (UIImage*)mergeImage:(UIImage*)firstImage withImage:(UIImage*)secondImage;
-
++ (UIImage *)mergeImage:(UIImage*)firstImage withImage:(UIImage*)secondImage;
+/** 切割图片 */
++ (UIImage *)imageWithCornerRadius:(CGFloat)radius withImageView:(UIImageView *)imageView;
+/**
+ *从图片中按指定的位置大小截取图片的一部分
+ * UIImage image 原始的图片
+ * CGRect rect 要截取的区域
+ */
++ (UIImage *)imageFromImage:(UIImage *)image inRect:(CGRect)rect;
 @end

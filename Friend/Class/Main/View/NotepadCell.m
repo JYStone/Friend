@@ -69,13 +69,21 @@
     self.commentBtn.scaleFrame6 = CGRectMake(680, 150, 40, 40);
 }
 - (IBAction)zanBtnClick:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(likeActionClick)]) {
-        [self.delegate likeActionClick];
+//    if ([self.delegate respondsToSelector:@selector(likeActionClick)]) {
+//        [self.delegate likeActionClick];
+//    }
+    
+    if (self.likeActionBlock) {
+        self.likeActionBlock();
     }
 }
 - (IBAction)commentBtnClick:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(commentActionClick)]) {
-        [self.delegate commentActionClick];
+//    if ([self.delegate respondsToSelector:@selector(commentActionClick)]) {
+//        [self.delegate commentActionClick];
+//    }
+    
+    if (self.commentActionBlock) {
+        self.commentActionBlock();
     }
 }
 @end

@@ -12,7 +12,10 @@
 #import "CustomNavigationController.h"
 //#import "UIMarginViewController/UIMarginViewController.h"
 @interface AppDelegate ()
-
+@property (assign, nonatomic) UIBackgroundTaskIdentifier bgTaskId;            // 后台任务标记
+@property (strong, nonatomic) dispatch_block_t expirationHandler;
+@property (assign, nonatomic) BOOL background;
+@property (assign, nonatomic) BOOL isLogined;
 @end
 
 @implementation AppDelegate
@@ -25,6 +28,22 @@
     CustomNavigationController *customVC = [[CustomNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
     self.window.rootViewController = customVC;
     [self.window makeKeyAndVisible];
+    
+    UIApplication* app = [UIApplication sharedApplication];
+    // 数据模拟
+    self.isLogined = YES;
+    
+    __weak AppDelegate* weakSelf = self;
+    
+    // 创建后台自唤醒，当180s时间结束的时候系统会调用这里面的方法
+    self.expirationHandler = ^{
+        [app endBackgroundTask:weakSelf.bgTaskId];
+        weakSelf.bgTaskId = UIBackgroundTaskInvalid;
+        NSLog(@"Expired，处理超时。。。。。");
+        CustomNavigationController *customVC = [[CustomNavigationController alloc] initWithRootViewController:[[HomeViewController alloc] init]];
+        self.window.rootViewController = customVC;
+    };
+
     return YES;
 }
 
@@ -37,6 +56,13 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // 当登陆状态才启动后台操作
+    if (self.isLogined)
+    {
+        NSLog(@"Entered background");
+        self.bgTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
+        self.background = YES;
+    }
 }
 
 
@@ -47,6 +73,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    self.background = NO;
 }
 
 

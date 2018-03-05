@@ -16,4 +16,8 @@
 @interface NotepadCell : UITableViewCell
 @property (nonatomic, weak) id<NotepadCellDelegate>delegate;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
+@property (nonatomic, copy) dispatch_block_t likeActionBlock;
+@property (nonatomic, copy) dispatch_block_t commentActionBlock;
+
+
 @end

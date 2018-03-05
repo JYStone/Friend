@@ -21,25 +21,45 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "HXPhotoPicker.h"
 
 @interface HomeViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) CAShapeLayer *maskLayer;
 @property (nonatomic, strong) CALayer *contentLayer;
 @property (nonatomic, strong) UIImagePickerController *imagePickerController;
 @property (nonatomic, strong) UIImageView *bgImageView;
+@property (nonatomic, strong) HXPhotoManager *manager;
+
 @end
 
 @implementation HomeViewController
-- (void)viewWillAppear:(BOOL)animated
-{
+
+- (HXPhotoManager *)manager {
+    if (!_manager) {
+        _manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhoto];
+        _manager.configuration.singleSelected = YES;
+        _manager.configuration.albumListTableView = ^(UITableView *tableView) {
+        };
+        _manager.configuration.movableCropBox = YES;
+        _manager.configuration.movableCropBoxEditSize = YES;
+        _manager.configuration.movableCropBoxCustomRatio = CGPointMake(1, 1);
+    }
+    return _manager;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageViewColor:[UIColor clearColor] Size:CGSizeMake(DEVICE_SCREEN_WIDTH, SafeAreaTopHeight)] forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage resizedImage:@"nav_bar_bg.png"] forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage resizedImage:@"nav_bar_bg.png"] forBarMetrics:UIBarMetricsDefault];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -111,7 +131,6 @@
         [headImage sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:headImageList[i]]];
         headImage.userInteractionEnabled = YES;
         headImage.tag = 200+i;
-//        headImage.image = [UIImage imageWithCornerRadius:headImage.bounds.size.height/2 withImageView:headImage];
         headImage.layer.masksToBounds = YES;
         headImage.layer.cornerRadius = 100/2*HEIGHT_SCALE_6;
         headImage.layer.borderColor = COLOR_FFFFFF.CGColor;
@@ -139,7 +158,6 @@
 
 - (void)buttonClick:(UIButton *)sender
 {
-    NSLog(@"%ld",sender.tag);
     if (sender.tag == 100) {
         SpecialDayViewController *specialVC = [[SpecialDayViewController alloc] init];
         [self.navigationController pushViewController:specialVC animated:YES];
@@ -149,6 +167,8 @@
     } else if (sender.tag == 102) {
         PhotoController *photoVC = [[PhotoController alloc] init];
         [self.navigationController pushViewController:photoVC animated:YES];
+    } else {
+        
     }
 }
 
@@ -160,103 +180,16 @@
 
 // 设置背景大图
 - (void)rightItemClick {
-    NSLog(@"背景图片");
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"选择图片" message:@"" preferredStyle: UIAlertControllerStyleActionSheet];
-    UIAlertAction *photoLibraryAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [[PrivacyPermission sharedInstance] accessPrivacyPermissionWithType:PrivacyPermissionTypeCamera completion:^(BOOL response, PrivacyPermissionAuthorizationStatus status) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (response) {
-                    NSLog(@"相机权限开启");
-                    [self selectImageFromAlbum];
-                } else {
-                    NSLog(@"相机权限没有开启");
-                }
-            });
-        }];
-    }];
-    UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [[PrivacyPermission sharedInstance] accessPrivacyPermissionWithType:PrivacyPermissionTypePhoto completion:^(BOOL response, PrivacyPermissionAuthorizationStatus status) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (response) {
-                    [self selectImageFromCamera];
-                } else {
-                    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"请打开相机权限" message:@"设置-隐私-相机" delegate:self cancelButtonTitle:@"去设置" otherButtonTitles:@"取消", nil];
-                    [alertView show];
-                }
-            });
-        }];
-    }];
-    UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    self.manager.configuration.saveSystemAblum = YES;
+    [self hx_presentAlbumListViewControllerWithManager:self.manager delegate:self];
+}
+
+- (void)albumListViewController:(HXAlbumListViewController *)albumListViewController didDoneAllList:(NSArray<HXPhotoModel *> *)allList photos:(NSArray<HXPhotoModel *> *)photoList videos:(NSArray<HXPhotoModel *> *)videoList original:(BOOL)original {
+    if (photoList.count > 0) {
+        HXPhotoModel *model = photoList.firstObject;
+        self.bgImageView.image = model.previewPhoto;
+    } else {
         
-    }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    [alertController addAction:photoLibraryAction];
-    [alertController addAction:cameraAction];
-    
-    [alertController addAction:saveAction];
-    [alertController addAction:cancelAction];
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-
-
-#pragma mark 从摄像头获取图片或视频
-- (void)selectImageFromCamera
-{
-    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-    //相机类型（拍照、录像...）字符串需要做相应的类型转换
-    self.imagePickerController.mediaTypes = @[(NSString *)kUTTypeImage];
-    self.imagePickerController.delegate = self;
-    //设置摄像头模式（拍照，录制视频）为录像模式
-    self.imagePickerController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-    CustomNavigationController *navVc = [[CustomNavigationController alloc] initWithRootViewController:self.imagePickerController];
-    [self presentViewController:navVc animated:YES completion:nil];
-}
-
-#pragma mark 从相册获取图片或视频
-- (void)selectImageFromAlbum
-{
-    //NSLog(@"相册");
-    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentViewController:self.imagePickerController animated:YES completion:nil];
-//    CustomNavigationController *navVc = [[CustomNavigationController alloc] initWithRootViewController:self.imagePickerController];
-//    [self presentViewController:navVc animated:YES completion:nil];
-}
-
-#pragma mark UIImagePickerControllerDelegate
-//该代理方法仅适用于只选取图片时
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo {
-    NSLog(@"选择完毕----image:%@-----info:%@",image,editingInfo);
-}
-
-//适用获取所有媒体资源，只需判断资源类型
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    NSString *mediaType=[info objectForKey:UIImagePickerControllerMediaType];
-    //判断资源类型
-    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]){
-        //如果是图片
-        self.bgImageView.image = info[UIImagePickerControllerEditedImage];
-        //压缩图片
-        //        NSData *fileData = UIImageJPEGRepresentation(self.bgImageView.image, 1.0);
-        //保存图片至相册
-        UIImageWriteToSavedPhotosAlbum(self.bgImageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-        //        上传图片
-        //        [self uploadImageWithData:fileData];
-        
-    }
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark 图片保存完毕的回调
-- (void) image: (UIImage *) image didFinishSavingWithError:(NSError *) error contextInfo: (void *)contextInf{
-    
-}
-
-#pragma mark 视频保存完毕的回调
-- (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInf{
-    if (error) {
-        NSLog(@"保存视频过程中发生错误，错误信息:%@",error.localizedDescription);
-    }else{
-        NSLog(@"视频保存成功.");
     }
 }
 

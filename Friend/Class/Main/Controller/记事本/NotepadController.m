@@ -74,7 +74,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NotepadCell *cell = [NotepadCell cellWithTableView:tableView];
-    cell.delegate = self;
+//    cell.delegate = self;
+    cell.likeActionBlock = ^{
+        NSLog(@"1点赞");
+    };
+    
+    cell.commentActionBlock = ^{
+        NSLog(@"1评论");
+    };
     return cell;
 }
 
